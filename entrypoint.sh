@@ -52,7 +52,7 @@ cd "$pkgbuild_dir"
 pkgname=$(grep -E 'pkgname' .SRCINFO | sed -e 's/.*= //')
 
 install_deps() {
-    sudo pacman -Syu --noconfirm base-devel perl
+    sudo pacman -Syu --noconfirm
     # install all package dependencies
     grep -E 'depends' .SRCINFO | \
         sed -e 's/.*depends = //' -e 's/:.*//' | \
